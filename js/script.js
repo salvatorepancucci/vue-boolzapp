@@ -216,6 +216,10 @@ createApp({
         getLastMessage(messages) {
             return messages.length > 0 ? messages[messages.length - 1].message : '';
         },
+        // Milestone 5: Mostra o nasconde il menu del messaggio
+        toggleMessageMenu(index) {
+            this.messageMenuIndex = this.messageMenuIndex === index ? null : index;
+        },
         
     }
 }).mount('#app');
