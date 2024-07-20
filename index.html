@@ -41,6 +41,22 @@
                         </li>
                     </ul>
                 </div>
+                <div class="col-8 chat-panel">
+                    <div class="chat-header d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <img :src="activeContact.avatar" alt="avatar" class="avatar me-2">
+                            <div>
+                                <h5 class="mb-0">{{ activeContact.name }}</h5>
+                                <small>Ultimo accesso oggi alle 12:00</small>
+                            </div>
+                        </div>
+                        <div class="chat-header-icons">
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-paperclip"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
