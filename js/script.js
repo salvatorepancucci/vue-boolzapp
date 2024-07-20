@@ -3,6 +3,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            newMessage: '', // Nuovo messaggio da inviare
             activeIndex: 0, // Indice del contatto attivo
             messageMenuIndex: null, // Indice del menu del messaggio attivo
             // Array di contatti con i loro messaggi
@@ -192,6 +193,26 @@ createApp({
             this.activeIndex = index;
             this.messageMenuIndex = null;
         },
+        // Milestone 3: Aggiunta di un messaggio
+        sendMessage() {
+            if (this.newMessage.trim() !== '') {
+                this.activeContact.messages.push({
+                    date: new Date().toLocaleString(),
+                    message: this.newMessage,
+                    status: 'sent'
+                });
+                this.newMessage = '';
+                // Risposta automatica "Ok" dopo 1 secondo
+                setTimeout(() => {
+                    this.activeContact.messages.push({
+                        date: new Date().toLocaleString(),
+                        message: 'Ok',
+                        status: 'received'
+                    });
+                }, 1000);
+            }
+        },
         
+        }
     }
 }).mount('#app');
