@@ -220,6 +220,14 @@ createApp({
         toggleMessageMenu(index) {
             this.messageMenuIndex = this.messageMenuIndex === index ? null : index;
         },
-        
+        // Mostra informazioni sul messaggio
+        messageInfo(index) {
+            alert('Message info for message index: ' + index);
+        },
+        // Cancella il messaggio selezionato
+        deleteMessage(index) {
+            this.activeContact.messages.splice(index, 1);
+            this.messageMenuIndex = null;
+        }
     }
 }).mount('#app');
