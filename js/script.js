@@ -3,6 +3,9 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            activeIndex: 0, // Indice del contatto attivo
+            messageMenuIndex: null, // Indice del menu del messaggio attivo
+            // Array di contatti con i loro messaggi
             contacts: [
                 {
                     name: 'Michele',
@@ -184,6 +187,11 @@ createApp({
         }
     },
     methods: {
+        // Milestone 2: Click sul contatto mostra la conversazione del contatto cliccato
+        setActiveContact(index) {
+            this.activeIndex = index;
+            this.messageMenuIndex = null;
+        },
         
     }
 }).mount('#app');
