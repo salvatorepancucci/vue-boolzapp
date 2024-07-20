@@ -3,6 +3,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            searchQuery: '', // Query di ricerca per filtrare i contatti
             newMessage: '', // Nuovo messaggio da inviare
             activeIndex: 0, // Indice del contatto attivo
             messageMenuIndex: null, // Indice del menu del messaggio attivo
@@ -185,6 +186,16 @@ createApp({
                     ],
                 }
             ]
+        }
+    },
+    computed: {
+        // Filtra i contatti in base alla query di ricerca
+        filteredContacts() {
+            return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
+        },
+        // Restituisce il contatto attivo
+        activeContact() {
+            return this.contacts[this.activeIndex];
         }
     },
     methods: {
