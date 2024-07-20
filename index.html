@@ -56,6 +56,19 @@
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
                     </div>
+                    <div class="chat-messages">
+                        <div v-for="(message, msgIndex) in activeContact.messages" :key="message.date" :class="['message', message.status]">
+                            <p>{{ message.message }}</p>
+                            <span class="message-date">{{ message.date }}</span>
+                            <i v-if="message.status === 'sent'" class="fas fa-caret-down message-menu-icon" @click="toggleMessageMenu(msgIndex)"></i>
+                            <div v-if="messageMenuIndex === msgIndex" class="message-menu">
+                                <ul>
+                                    <li @click="messageInfo(msgIndex)">Message info</li>
+                                    <li @click="deleteMessage(msgIndex)">Delete message</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
