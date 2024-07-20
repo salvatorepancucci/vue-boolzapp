@@ -212,7 +212,10 @@ createApp({
                 }, 1000);
             }
         },
+        // Restituisce l'ultimo messaggio di un contatto
+        getLastMessage(messages) {
+            return messages.length > 0 ? messages[messages.length - 1].message : '';
+        },
         
-        }
     }
 }).mount('#app');
