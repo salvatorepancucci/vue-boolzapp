@@ -1,3 +1,12 @@
+Ecco il codice CSS aggiornato con i messaggi inviati spostati a destra e i messaggi ricevuti a sinistra:
+
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #DBDBD2;
@@ -156,6 +165,7 @@ main {
 .message.sent {
     background-color: #d9ff66;
     align-self: flex-end;
+    margin-left: auto;
 }
 
 .message.received {
@@ -222,3 +232,9 @@ main {
     flex-grow: 1;
     margin: 0 10px;
 }
+
+.list-group-item {
+    background-color: #FFFFFF;
+    color: black;
+}
+```

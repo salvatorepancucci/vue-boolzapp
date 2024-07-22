@@ -1,3 +1,6 @@
+Ecco il codice CSS aggiornato per spostare i messaggi inviati a destra mentre i messaggi ricevuti restano a sinistra:
+
+```css
 * {
     margin: 0;
     padding: 0;
@@ -52,7 +55,7 @@ main {
     background-color: #2A2A2A; 
     border-right: 1px solid #333; 
     padding: 10px;
-    height: calc(90vh - 100px);
+    height: calc(80vh - 100px);
     overflow-y: auto;
 }
 
@@ -126,7 +129,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: calc(90vh - 100px);
+    height: calc(80vh - 100px);
 }
 
 .chat-header {
@@ -169,6 +172,7 @@ main {
 .message.sent {
     background-color: #128C7E; 
     align-self: flex-end;
+    margin-left: auto; 
 }
 
 .message.received {
